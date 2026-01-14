@@ -16,9 +16,9 @@
         }
 
         :root {
-            --bg-primary: #0f0f0f;
-            --bg-secondary: #161616;
-            --bg-card: #1c1c1c;
+            --bg-primary: #141414;
+            --bg-secondary: #1a1a1a;
+            --bg-card: #1f1f1f;
             --text-primary: #ffffff;
             --text-secondary: #a0a0a0;
             --accent: #3b82f6;
@@ -41,10 +41,8 @@
         [data-theme="light"] html {
             background: var(--bg-primary);
             background-image: 
-                radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.08) 1px, transparent 0),
-                radial-gradient(ellipse at top, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
-                radial-gradient(ellipse at bottom, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
-            background-size: 20px 20px, 100% 100%, 100% 100%;
+                radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.08) 1px, transparent 0);
+            background-size: 20px 20px;
             background-attachment: fixed;
         }
 
@@ -142,10 +140,8 @@
         html {
             background: var(--bg-primary);
             background-image: 
-                radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.07) 1px, transparent 0),
-                radial-gradient(ellipse at top, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at bottom, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
-            background-size: 20px 20px, 100% 100%, 100% 100%;
+                radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.07) 1px, transparent 0);
+            background-size: 20px 20px;
             background-attachment: fixed;
             min-height: 100%;
         }
@@ -319,10 +315,10 @@
 
         .hero h1 {
             font-size: clamp(2rem, 3.5vw, 3rem);
-            font-weight: 800;
+            font-weight: 500;
             margin-bottom: 24px;
-            line-height: 1.2;
-            letter-spacing: -1px;
+            line-height: 1.3;
+            letter-spacing: -0.3px;
             color: var(--text-primary);
         }
 
@@ -842,19 +838,19 @@
         }
 
         .section-title {
-            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-            font-weight: 700;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 500;
             text-align: center;
-            margin-bottom: 16px;
+            margin-bottom: 36px;
             color: var(--text-primary);
-            letter-spacing: -1px;
+            letter-spacing: -0.3px;
         }
 
 
         #technology .section-title {
-            font-size: 36px;
+            font-size: 32px;
             text-align: left;
-            margin-bottom: 12px;
+            margin-bottom: 36px;
         }
 
         #technology .section-label {
@@ -876,9 +872,9 @@
         }
 
         #how-it-works .section-title {
-            font-size: 36px;
+            font-size: 32px;
             text-align: left;
-            margin-bottom: 12px;
+            margin-bottom: 0px;
         }
 
         #how-it-works .section-label {
@@ -900,9 +896,9 @@
         }
 
         #our-vision .section-title {
-            font-size: 36px;
+            font-size: 32px;
             text-align: left;
-            margin-bottom: 12px;
+            margin-bottom: 36px;
         }
 
         #our-vision .section-label {
@@ -931,7 +927,7 @@
         }
 
         .application-box {
-            padding: 32px 25px;
+            padding: 24px 20px;
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 8px;
@@ -940,7 +936,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 16px;
+            gap: 13px;
             position: relative;
             overflow: hidden;
         }
@@ -974,15 +970,15 @@
         }
 
         .application-icon {
-            font-size: 2.5rem;
+            font-size: 2.1rem;
             color: var(--accent);
             margin-bottom: 0;
         }
 
         .application-label {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--text-secondary);
-            line-height: 1.7;
+            line-height: 1.65;
             margin: 0;
             font-weight: 400;
         }
@@ -1089,6 +1085,31 @@
         }
 
         /* Technology Section */
+        .product-image-container {
+            margin: 60px 0 80px 0;
+            text-align: center;
+        }
+
+        .product-image {
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        @media (min-width: 769px) {
+            .product-image {
+                max-width: 950px;
+            }
+        }
+
+        .product-image-caption {
+            margin-top: 16px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
         .technology-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -1155,14 +1176,49 @@
             font-size: 1.3rem;
             margin-bottom: 12px;
             color: var(--text-primary);
-            font-weight: 600;
-            letter-spacing: -0.5px;
+            font-weight: 500;
+            letter-spacing: -0.3px;
         }
 
         .tech-card p {
             color: var(--text-secondary);
             font-size: 0.95rem;
             line-height: 1.7;
+        }
+
+        .tech-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .tech-card ul li {
+            padding-left: 32px;
+            position: relative;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+            line-height: 1.7;
+        }
+
+        .tech-card ul li .check-icon {
+            position: absolute;
+            left: 0;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 1.5px solid var(--accent);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            flex-shrink: 0;
+            top: 0.4em;
+            background: transparent;
         }
 
         .tech-card .tech-card-label {
@@ -1306,7 +1362,7 @@
             font-size: 1.3rem;
             margin-bottom: 8px;
             color: var(--text-primary);
-            font-weight: 600;
+            font-weight: 500;
         }
 
         .team-card .role {
@@ -1691,6 +1747,16 @@
                 display: none;
             }
 
+            .section-title {
+                font-size: clamp(1.5rem, 4vw, 2rem);
+            }
+
+            #technology .section-title,
+            #how-it-works .section-title,
+            #our-vision .section-title {
+                font-size: 28px;
+            }
+
             .hero {
                 padding: 20px 0 60px;
             }
@@ -1773,17 +1839,17 @@
             }
 
             .application-box {
-                padding: 20px 16px;
+                padding: 18px 14px;
             }
 
             .application-icon {
-                font-size: 2rem;
+                font-size: 1.75rem;
             }
 
             .application-label {
-                font-size: 1.1rem;
+                font-size: 0.9rem;
                 font-weight: 400;
-                line-height: 1.7;
+                line-height: 1.6;
             }
 
             .hero-content {
@@ -1970,9 +2036,9 @@
         <div class="container">
             <div class="hero-content fade-in">
                 <div class="hero-text">
-                    <h1>Optimize Thermal Energy Storage Assets on Electricity Markets</h1>
-                    <p>We maximize the value of your Thermal Energy Storage System (TESS), significantly
-                        reducing your electricity bill and CO<sub>2</sub> emissions.</p>
+                    <h1>Make the most of your thermal energy storage assets</h1>
+                    <p>ThermoShift optimizes the operation of thermal energy storage assets for participation in electricity markets,
+                        cutting energy costs and CO<sub>2</sub> emissions.</p>
                     <div class="cta-buttons">
                         <div class="hero-epfl-badge">
                             <a href="https://www.epfl.ch/about/" target="_blank" rel="noopener noreferrer" class="hero-epfl-link">
@@ -2032,42 +2098,35 @@
         <div class="container">
             <p class="section-label">Our Vision</p>
             <h2 class="section-title">Thermal energy storage is the future</h2>
-            <div class="quote-box">
+            <!-- <div class="quote-box">
                 <div class="quote-box-cursor-effect"></div>
                 <blockquote class="quote-text">
                     "Heat and cold storage [...] is considered an important means for cheaply balancing high shares of fluctuating renewable electricity production."
                 </blockquote>
                 <p class="quote-attribution">— International Energy Agency (IEA)</p>
-            </div>
+            </div> -->
             <p class="section-subtitle">
-                Around 50% of the world's final energy use goes to heating and cooling, mainly in buildings and industry. 
-                At the same time, cooling demand is rising globally (driven by warming temperatures, data centers, and electrification), 
-                while heating is increasingly electrified through heat pumps.<br><br>
-                
-                As the share of intermittent renewable generation from wind and solar increases, the need for flexibility grows accordingly, 
-                driving the rapid deployment of energy storage systems. While electrochemical batteries have expanded quickly, they face well-known limitations that can be overcome by thermal storage for many applications:
-
+                50% of global energy goes to heating and cooling.<br>
+                In many applications, thermal storage is a better alternative to traditional batteries:
                 <div class="thermal-complexity-points">
                     <div class="complexity-point">
                         <span class="complexity-bullet">></span>
-                        <span class="complexity-text"><strong>Lower cost</strong> through abundant materials and simple designs</span>
+                        <span class="complexity-text"><strong>Lower cost</strong> with abundant materials</span>
                     </div>
                     <div class="complexity-point">
                         <span class="complexity-bullet">></span>
-                        <span class="complexity-text"><strong>No reliance on rare or geopolitically constrained metals</strong>, and reduced environmental impact from intensive mining and refining</span>
+                        <span class="complexity-text"><strong>No rare metals</strong>, limiting supply chain risks and mining impacts</span>
                     </div>
                     <div class="complexity-point">
                         <span class="complexity-bullet">></span>
-                        <span class="complexity-text"><strong>No capacity fade from cycling</strong>, enabling consistent performance over decades</span>
+                        <span class="complexity-text"><strong>No cycling degradation</strong>, consistent performance over decades</span>
                     </div>
                 </div>
                 </p>
                 <p class="section-subtitle">
-                Yet thermal batteries are inherently harder to model and optimize for electricity markets.
+                Thermal storage is complex to optimize for electricity markets. <span class="highlight-text">ThermoShift makes it simple.</span><br><br>
 
-                <span class="highlight-text">ThermoShift is changing that.</span><br><br>
-
-                <p class="section-label">Examples of applications</p>
+                <p class="section-label">Use cases</p>
                 <div class="applications-grid">
                     <div class="application-box">
                         <div class="application-box-cursor-effect"></div>
@@ -2120,67 +2179,51 @@
             <p class="section-label">Our Product</p>
             <h2 class="section-title">Unlocking the potential of thermal storage</h2>
             <p class="section-subtitle">
-                Thermal batteries hold the potential to generate real value across electricity markets, but are inherently more complex than electrochemical batteries.
-                <div class="thermal-complexity-points">
-                    <div class="complexity-point">
-                        <span class="complexity-bullet">></span>
-                        <span class="complexity-text"><strong>Charged by HVAC</strong> instead of electricity directly</span>
-                    </div>
-                    <div class="complexity-point">
-                        <span class="complexity-bullet">></span>
-                        <span class="complexity-text"><strong>Governed by complex thermodynamics</strong>, requiring sophisticated modeling and advanced optimization methods</span>
-                    </div>
-                    <div class="complexity-point">
-                        <span class="complexity-bullet">></span>
-                        <span class="complexity-text"><strong>Coupled to thermal processes</strong> that must be managed while participating in electricity markets</span>
-                    </div>
-                </div>
+                Thermal batteries are inherently more complex than electrochemical batteries: they are charged by HVAC, governed by complex thermodynamics, and coupled to thermal processes.<br><br>
+
+                ThermoShift accurately models and optimizes the operation of these complex thermal systems
+                 in real time, across electricity markets, HVAC performance, and local self-consumption.
             </p>
-            <p class="section-subtitle">
-                ThermoShift uses an advanced Model Predictive Control (MPC) framework that accurately models 
-                and optimizes the operation of complex thermal systems in real-time across electricity markets 
-                (day-ahead, intraday, and ancillary service markets) and HVAC performance (COP and short cycling).
-                We also integrate local self-consumption if available.
-            </p>
+            <div class="product-image-container">
+                <img id="product-image" src="operation_fielddata_feb12_2025.png" alt="ThermoShift operation visualization showing heat pump power and electricity prices" class="product-image">
+                <p class="product-image-caption">Real data from operating a heat pump and hot water storage system in a building</p>
+            </div>
             <div class="technology-grid">
                 <div class="tech-card fade-in">
                     <div class="tech-card-cursor-effect"></div>
                     <p class="tech-card-label">Cost-Effective</p>
                     <h3>Save 20-40% on your energy costs</h3>
-                    <p>We use your thermal storage to provide grid services and shift heating and cooling loads to low-price periods, 
-                        while ensuring compliance with thermodynamic constraints.
-                    </p>
+                    <p>Shift loads to low-price periods and provide grid services while maintaining thermal constraints.</p>
                 </div>
                 <div class="tech-card fade-in">
                     <div class="tech-card-cursor-effect"></div>
                     <p class="tech-card-label">Sustainable</p>
                     <h3>Reduce your carbon footprint</h3>
-                    <p>By optimizing when your thermal storage charges and discharges, we maximize the use of renewable energy sources,
-                        both from the grid and from self-consumption. Achieve your carbon footprint reduction goals thanks to thermal storage.</p>
+                    <p>Maximize renewable energy use from the grid and self-consumption to meet your sustainability goals.</p>
                 </div>
                 <div class="tech-card fade-in">
                     <div class="tech-card-cursor-effect"></div>
                     <p class="tech-card-label">Compatible</p>
-                    <h3>Works with a wide range of thermal energy storage technologies</h3>
-                    <p>Ice storage, chilled or hot water storage, Phase Change Materials (PCMs), and more.</p>
+                    <h3>Works with any thermal storage</h3>
+                    <p>Ice storage, chilled/hot water storage, PCMs (Phase Change Materials), and more.</p>
                 </div>
                 <div class="tech-card fade-in">
                     <div class="tech-card-cursor-effect"></div>
                     <p class="tech-card-label">Safe</p>
                     <h3>Guaranteed thermal needs</h3>
-                    <p>Our optimization algorithms always guarantee your heating and cooling needs before cost optimization.</p>
+                    <p>Your thermal requirements always come before cost optimization.</p>
                 </div>
                 <div class="tech-card fade-in">
                     <div class="tech-card-cursor-effect"></div>
                     <p class="tech-card-label">Robust</p>
                     <h3>Continuous optimization</h3>
-                    <p>Our operation optimization algorithms are run continuously to account for the latest state of the system, demand forecasts, market price forecasts, and local production forecasts.</p>
+                    <p>Adapting in real-time to changes in system state, demand, prices, and local production.</p>
                 </div>  
                 <div class="tech-card fade-in">
                     <div class="tech-card-cursor-effect"></div>
                     <p class="tech-card-label">Transparent</p>
                     <h3>Real-time monitoring</h3>
-                    <p>We provide real-time dashboards and data visualization tools to track the performance of your asset, including cost savings and carbon emissions.</p>
+                    <p>Track performance, savings, and emissions with live dashboards and periodic reports.</p>
                 </div>                
             </div>
         </div>
@@ -2203,27 +2246,36 @@
         <div class="container">
             <p class="section-label">Our Process</p>
             <h2 class="section-title">How It Works</h2>
-            <p class="section-subtitle">
-                We unlock the value of your Thermal Energy Storage System (TESS) on a wide range of electricity markets.
-            </p>
+            <!-- <p class="section-subtitle">
+                Unlock TESS value across electricity markets in three steps.
+            </p> -->
             <div class="technology-grid">
                 <div class="tech-card fade-in">
                     <div class="tech-card-cursor-effect"></div>
                     <p class="tech-card-label">Step 1</p>
                     <h3>We analyze your TESS</h3>
-                    <p>Our team evaluates your system to understand its characteristics and integration requirements, and provides an initial estimate of expected savings.</p>
+                    <ul>
+                        <li><i class="bi bi-check check-icon"></i>System evaluation and characteristics</li>
+                        <li><i class="bi bi-check check-icon"></i>Initial savings estimate</li>
+                    </ul>
                 </div>
                 <div class="tech-card fade-in">
                     <div class="tech-card-cursor-effect"></div>
                     <p class="tech-card-label">Step 2</p>
                     <h3>We integrate and test</h3>
-                    <p>We integrate with your HVAC controls and sensors to enable real-time monitoring and optimization, and perform a thorough testing phase.</p>
+                    <ul>
+                        <li><i class="bi bi-check check-icon"></i>HVAC controls and sensors integration</li>
+                        <li><i class="bi bi-check check-icon"></i>Testing phase</li>
+                    </ul>
                 </div>
                 <div class="tech-card fade-in">
                     <div class="tech-card-cursor-effect"></div>
                     <p class="tech-card-label">Step 3</p>
                     <h3>Cost and CO<sub>2</sub> savings!</h3>
-                    <p>We continuously optimize your asset across multiple electricity markets and for HVAC performance. We regularly report on your cost and CO<sub>2</sub> savings.</p>
+                    <ul>
+                        <li><i class="bi bi-check check-icon"></i>Continuous optimization</li>
+                        <li><i class="bi bi-check check-icon"></i>Revenue sharing model</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -2239,7 +2291,7 @@
                 <div class="sites-number">6</div>
                 <p class="sites-label">installations currently managed by ThermoShift</p>
             </div>
-            <p class="section-subtitle">Ready to achieve your sustainability targets and cut your electricity costs? Let's discuss your project.</p>
+            <p class="section-subtitle">Ready to cut costs and emissions? Let's talk.</p>
             <div class="contact-content fade-in" style="text-align: center; margin-top: 40px;">
                 <div class="cta-buttons">
                     <a href="https://calendly.com/th-defauw/new-meeting" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a demo →</a>
@@ -2417,15 +2469,13 @@
             root.style.setProperty('--gradient-start', colors.gradientStart);
             root.style.setProperty('--gradient-end', colors.gradientEnd);
 
-            // Update html background gradients (single continuous background for all sections)
+            // Update html background (dots only)
             const dotColor = isLightMode ? 'rgba(0, 0, 0, 0.08)' : 'rgba(255, 255, 255, 0.07)';
-            const ellipseOpacity = isLightMode ? '0.06' : '0.08';
             
             document.documentElement.style.backgroundImage = `
-                radial-gradient(circle at 1px 1px, ${dotColor} 1px, transparent 0),
-                radial-gradient(ellipse at top, rgba(${colors.rgba}, ${ellipseOpacity}) 0%, transparent 50%),
-                radial-gradient(ellipse at bottom, rgba(${colors.rgbaLight}, ${ellipseOpacity}) 0%, transparent 50%)
+                radial-gradient(circle at 1px 1px, ${dotColor} 1px, transparent 0)
             `;
+            document.documentElement.style.backgroundSize = '20px 20px';
 
             // Update battery fill gradient
             const batteryFill = document.querySelector('.battery-fill');
@@ -2558,6 +2608,16 @@
         const savedMode = localStorage.getItem('colorMode') || 'device';
         let currentMode = savedMode;
 
+        function updateProductImage() {
+            const productImage = document.getElementById('product-image');
+            if (productImage) {
+                const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
+                productImage.src = isDarkMode 
+                    ? 'operation_fielddata_feb12_2025_dark.png' 
+                    : 'operation_fielddata_feb12_2025.png';
+            }
+        }
+
         function updateModeUI() {
             let actualTheme;
             
@@ -2588,6 +2648,9 @@
             
             // Reapply theme to update background colors for the new mode
             applyTheme(currentTheme);
+            
+            // Update product image based on theme
+            updateProductImage();
         }
 
         modeToggle.addEventListener('click', (e) => {
@@ -2616,6 +2679,9 @@
 
         // Apply mode on page load
         updateModeUI();
+        
+        // Update product image on page load
+        updateProductImage();
 
         // Tech card cursor effect
         function initCursorEffect() {
