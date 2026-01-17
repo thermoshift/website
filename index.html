@@ -251,12 +251,15 @@
 
         /* Hero Animation Container */
         .hero-animation-container {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
+            background: rgba(31, 31, 31, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
-            backdrop-filter: blur(10px);
+            box-shadow: 
+                0 12px 40px rgba(0, 0, 0, 0.3),
+                0 4px 12px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(30px) saturate(200%);
+            -webkit-backdrop-filter: blur(30px) saturate(200%);
             padding: 32px;
             display: flex;
             flex-direction: column;
@@ -266,8 +269,34 @@
             position: relative;
         }
 
+        .hero-animation-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.02) 100%);
+            pointer-events: none;
+            border-radius: 12px;
+            z-index: 0;
+        }
+
+        .hero-animation-container > * {
+            position: relative;
+            z-index: 1;
+        }
+
         [data-theme="light"] .hero-animation-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        [data-theme="light"] .hero-animation-container::before {
+            display: none;
         }
 
         /* Theme Toggle */
@@ -378,6 +407,7 @@
 
         .hero-epfl-badge {
             margin: 0;
+            flex-shrink: 0;
         }
 
         .hero-epfl-link {
@@ -392,6 +422,9 @@
             border: 1px solid var(--border);
             border-radius: 22px;
             backdrop-filter: blur(10px);
+            white-space: nowrap;
+            min-width: fit-content;
+            flex-shrink: 0;
         }
 
         .hero-epfl-link:hover {
@@ -1159,16 +1192,46 @@
 
         /* Fake UI Container */
         .fake-ui-container {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
+            background: rgba(31, 31, 31, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
-            backdrop-filter: blur(10px);
+            box-shadow: 
+                0 12px 40px rgba(0, 0, 0, 0.3),
+                0 4px 12px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(30px) saturate(200%);
+            -webkit-backdrop-filter: blur(30px) saturate(200%);
+            position: relative;
+        }
+
+        .fake-ui-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.02) 100%);
+            pointer-events: none;
+            border-radius: 12px;
+            z-index: 0;
+        }
+
+        .fake-ui-container > * {
+            position: relative;
+            z-index: 1;
         }
 
         [data-theme="light"] .fake-ui-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        [data-theme="light"] .fake-ui-container::before {
+            display: none;
         }
 
         .fake-ui-topbar {
@@ -2062,6 +2125,7 @@
         /* Responsive Design */
         @media (max-width: 1024px) {
             .hero-content {
+                margin-top: 40px;
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
@@ -2286,7 +2350,7 @@
             }
 
             .battery-body {
-                width: 75px;
+                width: 60px;
                 height: 110px;
             }
 
@@ -2535,7 +2599,7 @@
                             <span class="fake-ui-title">Building 3A - Hot water storage</span>
                         </div>
                         <div class="fake-ui-toggle-container">
-                            <span class="fake-ui-toggle-label">Optimize</span>
+                            <span class="fake-ui-toggle-label">Optimizing</span>
                             <label class="fake-ui-toggle-switch">
                                 <input type="checkbox" checked>
                                 <span class="fake-ui-toggle-slider"></span>
@@ -2560,7 +2624,7 @@
                         </div>
                     </div>
                     <div class="fake-ui-content">
-                        <h3 class="fake-ui-content-title">Last 36 hours</h3>
+                        <h3 class="fake-ui-content-title">Since Yesterday</h3>
                         <img id="product-image" src="operation_fielddata_feb12_2025.png" alt="ThermoShift operation visualization showing heat pump power and electricity prices" class="product-image">
                         <p class="fake-ui-caption">Real data from operating a heat pump and hot water storage system in a building</p>
                     </div>
