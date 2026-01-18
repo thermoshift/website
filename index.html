@@ -1177,12 +1177,6 @@
             border-radius: 8px;
         }
 
-        @media (min-width: 769px) {
-            .product-image {
-                max-width: 950px;
-            }
-        }
-
         .product-image-caption {
             margin-top: 16px;
             font-size: 0.9rem;
@@ -1232,6 +1226,10 @@
 
         [data-theme="light"] .fake-ui-container::before {
             display: none;
+        }
+
+        [data-theme="light"] .fake-ui-stats {
+            background: rgba(22, 163, 74, 0.04);
         }
 
         .fake-ui-topbar {
@@ -1286,8 +1284,9 @@
             display: inline-block;
             width: 52px;
             height: 28px;
-            cursor: pointer;
+            cursor: default;
             flex-shrink: 0;
+            pointer-events: none;
         }
 
         .fake-ui-toggle-switch input {
@@ -1298,7 +1297,7 @@
 
         .fake-ui-toggle-slider {
             position: absolute;
-            cursor: pointer;
+            cursor: default;
             top: 0;
             left: 0;
             right: 0;
@@ -1306,6 +1305,7 @@
             background-color: var(--border);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             border-radius: 14px;
+            pointer-events: none;
         }
 
         .fake-ui-toggle-slider:before {
@@ -1326,7 +1326,7 @@
         }
 
         .fake-ui-toggle-switch input:checked + .fake-ui-toggle-slider {
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            background: linear-gradient(135deg, #60a5fa, #2563eb);
             box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15), inset 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
@@ -1337,6 +1337,13 @@
 
         [data-theme="light"] .fake-ui-toggle-switch input:checked + .fake-ui-toggle-slider {
             box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2), inset 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Hide toggle label on mobile */
+        @media (max-width: 768px) {
+            .fake-ui-toggle-label {
+                display: none;
+            }
         }
 
         .fake-ui-content {
@@ -1388,7 +1395,7 @@
             align-items: center;
             justify-content: flex-start;
             padding: 12px 24px;
-            background: var(--bg-secondary);
+            background: rgba(22, 163, 74, 0.03);
             border-bottom: 1px solid var(--border);
             gap: 24px;
         }
@@ -1402,10 +1409,14 @@
         .fake-ui-stat-separator {
             width: 1px;
             height: 16px;
-            background: var(--border);
+            background: rgba(255, 255, 255, 0.15);
             flex-shrink: 0;
             align-self: center;
             margin: 0 4px;
+        }
+
+        [data-theme="light"] .fake-ui-stat-separator {
+            background: rgba(0, 0, 0, 0.15);
         }
 
         .fake-ui-stat {
@@ -1417,13 +1428,19 @@
         }
 
         .fake-ui-stat-value {
-            font-size: 0.9375rem;
+            font-size: 1rem;
             font-weight: 600;
             line-height: 1;
             letter-spacing: -0.01em;
-            color: var(--accent);
+            color: #16a34a;
             display: inline-flex;
             align-items: baseline;
+            gap: 10px;
+        }
+
+        .fake-ui-stat-value i {
+            font-size: 0.9375rem;
+            opacity: 0.9;
         }
 
         .fake-ui-stat-value sub {
@@ -1448,13 +1465,17 @@
             flex-direction: row;
             align-items: center;
             padding-right: 24px;
-            border-right: 1px solid var(--border);
+            border-right: 1px solid rgba(255, 255, 255, 0.15);
             flex-shrink: 0;
             gap: 6px;
         }
 
+        [data-theme="light"] .fake-ui-stat-date {
+            border-right-color: rgba(0, 0, 0, 0.15);
+        }
+
         .fake-ui-stat-date-label {
-            font-size: 0.6875rem;
+            font-size: 0.75rem;
             color: var(--text-secondary);
             font-weight: 500;
             text-transform: uppercase;
@@ -1463,7 +1484,7 @@
         }
 
         .fake-ui-stat-date-value {
-            font-size: 0.8125rem;
+            font-size: 0.875rem;
             color: var(--text-primary);
             font-weight: 500;
             letter-spacing: -0.01em;
@@ -1472,14 +1493,15 @@
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 4px;
-            cursor: pointer;
+            cursor: default;
             transition: all 0.2s ease;
             display: inline-block;
+            pointer-events: none;
         }
 
         .fake-ui-stat-date-value:hover {
-            border-color: var(--accent);
-            background: var(--bg-secondary);
+            border-color: var(--border);
+            background: var(--bg-card);
         }
 
         .fake-ui-stat-date-connector {
@@ -2589,7 +2611,7 @@
                 Thermal batteries offer major cost and sustainability benefits over traditional batteries, but their operation is inherently more complex: 
                 they are charged by HVAC, governed by thermodynamics, and coupled to thermal processes that must be managed.<br><br>
 
-                ThermoShift uses advanced optimization algorithms and forecasting to model and optimize the operation of thermal 
+                ThermoShift uses advanced forecasting and optimization algorithms to model and optimize the operation of thermal 
                 systems in real time, maximizing value across electricity markets, HVAC performance, and local self-consumption.
             </p>
             <div class="product-image-container">
@@ -2601,7 +2623,7 @@
                         <div class="fake-ui-toggle-container">
                             <span class="fake-ui-toggle-label">Optimizing</span>
                             <label class="fake-ui-toggle-switch">
-                                <input type="checkbox" checked>
+                                <input type="checkbox" checked disabled>
                                 <span class="fake-ui-toggle-slider"></span>
                             </label>
                         </div>
@@ -2615,11 +2637,11 @@
                         </div>
                         <div class="fake-ui-stats-group">
                             <div class="fake-ui-stat">
-                                <span class="fake-ui-stat-value">-12,450 CHF</span>
+                                <span class="fake-ui-stat-value"><i class="bi bi-cash-stack"></i> -12,450 CHF</span>
                             </div>
                             <div class="fake-ui-stat-separator"></div>
                             <div class="fake-ui-stat">
-                                <span class="fake-ui-stat-value">-28.3 tons CO<sub>2</sub></span>
+                                <span class="fake-ui-stat-value"><i class="bi bi-tree"></i> -15.3 tons CO₂</span>
                             </div>
                         </div>
                     </div>
