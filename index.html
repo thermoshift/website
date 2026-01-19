@@ -186,7 +186,9 @@
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
             border: 1px solid var(--text-secondary);
             background: transparent;
@@ -1196,6 +1198,8 @@
             backdrop-filter: blur(30px) saturate(200%);
             -webkit-backdrop-filter: blur(30px) saturate(200%);
             position: relative;
+            display: inline-block;
+            max-width: 100%;
         }
 
         .fake-ui-container::before {
@@ -1353,7 +1357,6 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            min-height: 400px;
         }
 
         .fake-ui-content-title {
@@ -1376,8 +1379,14 @@
         }
 
         @media (min-width: 769px) {
+            .fake-ui-container {
+                width: 100%;
+                max-width: 968px; /* 900px image + 2*34px padding */
+            }
+
             .fake-ui-content .product-image {
                 max-width: 900px;
+                width: 100%;
             }
         }
 
@@ -2144,6 +2153,1278 @@
             animation: fadeInUp 0.8s ease-out;
         }
 
+        /* Large Screen Optimizations */
+        @media (min-width: 1600px) {
+            .container {
+                max-width: 1400px;
+                padding: 0 120px;
+            }
+
+            .hero h1 {
+                font-size: 3.75rem;
+            }
+
+            .hero p {
+                font-size: 1.35rem;
+            }
+
+            .hero-content {
+                gap: 80px;
+            }
+
+            section {
+                padding: 120px 0;
+            }
+
+            .section-title {
+                font-size: 2.25rem;
+            }
+
+            #technology .section-title,
+            #how-it-works .section-title,
+            #our-vision .section-title {
+                font-size: 36px;
+            }
+
+            .section-subtitle {
+                font-size: 1.2rem;
+            }
+
+            #technology .section-subtitle,
+            #how-it-works .section-subtitle,
+            #our-vision .section-subtitle {
+                font-size: 1.2rem;
+                max-width: 100%;
+            }
+
+            .technology-grid {
+                gap: 40px;
+            }
+
+            .tech-card {
+                padding: 40px;
+            }
+
+            .tech-card h3 {
+                font-size: 1.4rem;
+            }
+
+            .tech-card p {
+                font-size: 1.05rem;
+            }
+
+            .tech-card ul {
+                font-size: 1.15rem;
+            }
+
+            .tech-card ul li {
+                padding-left: 40px;
+                margin-bottom: 12px;
+            }
+
+            .tech-card ul li .check-icon {
+                width: 18px;
+                height: 18px;
+                font-size: 0.75rem;
+                border-width: 2px;
+            }
+
+            .tech-card-label {
+                font-size: 1.1rem;
+            }
+
+            .tech-icon {
+                font-size: 2.8rem;
+                margin-bottom: 20px;
+            }
+
+            #technology .section-label,
+            #how-it-works .section-label,
+            #our-vision .section-label {
+                font-size: 1rem;
+            }
+
+            .fake-ui-title {
+                font-size: 1rem;
+            }
+
+            .fake-ui-toggle-label {
+                font-size: 0.9rem;
+            }
+
+            .fake-ui-content-title {
+                font-size: 0.85rem;
+            }
+
+            .fake-ui-caption {
+                font-size: 1.05rem;
+            }
+
+            .fake-ui-stat-value {
+                font-size: 1.1rem;
+            }
+
+            .fake-ui-stat-label {
+                font-size: 0.75rem;
+            }
+
+            .fake-ui-stat-date-label {
+                font-size: 0.85rem;
+            }
+
+            .fake-ui-stat-date-value {
+                font-size: 1rem;
+            }
+
+            .applications-grid {
+                gap: 24px;
+            }
+
+            .application-box {
+                padding: 28px 24px;
+            }
+
+            .application-icon {
+                font-size: 2.4rem;
+            }
+
+            .application-label {
+                font-size: 1.15rem;
+            }
+
+            .epfl-text {
+                font-size: 1.05rem;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 32px;
+            }
+
+            .team-card {
+                padding: 40px;
+            }
+
+            .team-card h3 {
+                font-size: 1.4rem;
+            }
+
+            .team-avatar {
+                width: 120px;
+                height: 120px;
+                font-size: 42px;
+            }
+
+            .stats-grid {
+                gap: 60px;
+            }
+
+            .stat-number {
+                font-size: 3rem;
+            }
+
+            .stat-label {
+                font-size: 1.1rem;
+            }
+
+            .quote-box {
+                padding: 40px;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+
+            .complexity-point {
+                font-size: 1.2rem;
+            }
+
+            .why-thermal-content {
+                gap: 60px;
+            }
+
+            .globe-container {
+                width: 220px;
+                height: 220px;
+            }
+
+            .contact-content {
+                max-width: 700px;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                padding: 16px 20px;
+                font-size: 17px;
+            }
+
+            .btn {
+                padding: 12px 28px;
+                font-size: 15px;
+            }
+
+            .nav-contact-btn {
+                padding: 12px 28px;
+                font-size: 15px;
+            }
+
+            .nav-links {
+                gap: 40px;
+            }
+
+            .nav-links a {
+                font-size: 16px;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+
+            .hero-epfl-link {
+                padding: 10px 18px;
+                gap: 8px;
+            }
+
+            .hero-epfl-logo {
+                height: 1.15em;
+            }
+
+            .hero-epfl-text {
+                font-size: 0.95rem;
+            }
+
+            .hero-animation-container {
+                padding: 40px;
+            }
+
+            .battery-animation {
+                gap: 60px;
+                min-height: 340px;
+            }
+
+            /* Scale factor ~1.1x from base */
+            .heat-pump-container {
+                width: 220px;
+                height: 121px;
+                margin-bottom: 11px; /* Account for feet height */
+            }
+
+            .heat-pump {
+                height: 121px;
+            }
+
+            .heat-pump-body {
+                width: 220px;
+                height: 110px;
+            }
+
+            .heat-pump-feet {
+                bottom: -11px;
+                width: 42px;
+                height: 11px;
+            }
+
+            .heat-pump-feet.left {
+                left: 17px;
+            }
+
+            .heat-pump-feet.right {
+                right: 17px;
+            }
+
+            .heat-pump-fan-area {
+                left: 17px;
+                width: 88px;
+                height: 88px;
+            }
+
+            .heat-pump-fan {
+                width: 77px;
+                height: 77px;
+            }
+
+            .fan-blade {
+                width: 28px;
+                height: 9px;
+            }
+
+            .fan-blade:nth-child(1) {
+                transform: translate(-50%, -50%) rotate(0deg) translateX(22px);
+            }
+
+            .fan-blade:nth-child(2) {
+                transform: translate(-50%, -50%) rotate(90deg) translateX(22px);
+            }
+
+            .fan-blade:nth-child(3) {
+                transform: translate(-50%, -50%) rotate(180deg) translateX(22px);
+            }
+
+            .fan-blade:nth-child(4) {
+                transform: translate(-50%, -50%) rotate(270deg) translateX(22px);
+            }
+
+            .fan-hub {
+                width: 18px;
+                height: 18px;
+            }
+
+            .heat-pump-u-shape {
+                right: 22px;
+                top: 22px;
+                width: 77px;
+                height: 66px;
+            }
+
+            .battery-container {
+                width: 132px;
+                height: 165px;
+            }
+
+            .battery-body {
+                width: 88px;
+                height: 154px;
+                border-radius: 13px;
+            }
+
+            .battery-terminal {
+                width: 33px;
+                height: 13px;
+                top: -13px;
+            }
+
+            .fake-ui-content {
+                padding: 40px;
+            }
+
+            .fake-ui-container {
+                max-width: 1080px; /* 1000px image + 2*40px padding */
+            }
+
+            .fake-ui-content .product-image {
+                max-width: 1000px;
+            }
+
+            .product-image-container {
+                margin: 70px 0 90px 0;
+            }
+
+            footer {
+                padding: 50px 0;
+                margin-top: 50px;
+            }
+
+            .footer-company-name {
+                font-size: 24px;
+            }
+
+            .footer-one-liner {
+                font-size: 1rem;
+            }
+
+            .footer-address {
+                font-size: 1rem;
+            }
+
+            .footer-content a {
+                font-size: 1rem;
+            }
+
+            .footer-copyright p {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (min-width: 1920px) {
+            .container {
+                max-width: 1600px;
+                padding: 0 160px;
+            }
+
+            .hero h1 {
+                font-size: 4.25rem;
+            }
+
+            .hero p {
+                font-size: 1.5rem;
+                max-width: 600px;
+            }
+
+            .hero-content {
+                gap: 100px;
+            }
+
+            section {
+                padding: 140px 0;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            #technology .section-title,
+            #how-it-works .section-title,
+            #our-vision .section-title {
+                font-size: 40px;
+            }
+
+            .section-subtitle {
+                font-size: 1.3rem;
+                max-width: 900px;
+            }
+
+            #technology .section-subtitle,
+            #how-it-works .section-subtitle,
+            #our-vision .section-subtitle {
+                font-size: 1.3rem;
+                max-width: 100%;
+            }
+
+            .technology-grid {
+                gap: 48px;
+                margin-top: 80px;
+            }
+
+            .tech-card {
+                padding: 48px;
+            }
+
+            .tech-card h3 {
+                font-size: 1.5rem;
+            }
+
+            .tech-card p {
+                font-size: 1.1rem;
+            }
+
+            .tech-card ul {
+                font-size: 1.25rem;
+            }
+
+            .tech-card ul li {
+                padding-left: 44px;
+                margin-bottom: 14px;
+            }
+
+            .tech-card ul li .check-icon {
+                width: 20px;
+                height: 20px;
+                font-size: 0.85rem;
+                border-width: 2px;
+            }
+
+            .tech-card-label {
+                font-size: 1.15rem;
+            }
+
+            .tech-icon {
+                font-size: 3rem;
+                margin-bottom: 24px;
+            }
+
+            #technology .section-label,
+            #how-it-works .section-label,
+            #our-vision .section-label {
+                font-size: 1.05rem;
+            }
+
+            .fake-ui-title {
+                font-size: 1.1rem;
+            }
+
+            .fake-ui-toggle-label {
+                font-size: 0.95rem;
+            }
+
+            .fake-ui-content-title {
+                font-size: 0.9rem;
+            }
+
+            .fake-ui-caption {
+                font-size: 1.15rem;
+            }
+
+            .fake-ui-stat-value {
+                font-size: 1.2rem;
+            }
+
+            .fake-ui-stat-label {
+                font-size: 0.8rem;
+            }
+
+            .fake-ui-stat-date-label {
+                font-size: 0.9rem;
+            }
+
+            .fake-ui-stat-date-value {
+                font-size: 1.05rem;
+            }
+
+            .applications-grid {
+                gap: 28px;
+                margin: 32px 0;
+            }
+
+            .application-box {
+                padding: 32px 28px;
+            }
+
+            .application-icon {
+                font-size: 2.6rem;
+            }
+
+            .application-label {
+                font-size: 1.25rem;
+            }
+
+            .epfl-text {
+                font-size: 1.15rem;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+                gap: 40px;
+                margin-top: 80px;
+            }
+
+            .team-card {
+                padding: 48px;
+            }
+
+            .team-card h3 {
+                font-size: 1.5rem;
+            }
+
+            .team-card .role {
+                font-size: 1.05rem;
+            }
+
+            .team-card p {
+                font-size: 1rem;
+            }
+
+            .team-avatar {
+                width: 140px;
+                height: 140px;
+                font-size: 48px;
+                margin-bottom: 24px;
+            }
+
+            .stats-grid {
+                gap: 80px;
+            }
+
+            .stat-item {
+                padding: 32px;
+            }
+
+            .stat-number {
+                font-size: 3.5rem;
+            }
+
+            .stat-label {
+                font-size: 1.15rem;
+            }
+
+            .quote-box {
+                padding: 48px;
+                max-width: 1000px;
+            }
+
+            .quote-text {
+                font-size: 1.3rem;
+            }
+
+            .quote-attribution {
+                font-size: 1.2rem;
+            }
+
+            .complexity-point {
+                font-size: 1.25rem;
+            }
+
+            .why-thermal-content {
+                gap: 80px;
+                margin-top: 60px;
+            }
+
+            .globe-container {
+                width: 260px;
+                height: 260px;
+            }
+
+            .contact-content {
+                max-width: 800px;
+            }
+
+            .contact-form {
+                gap: 32px;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                padding: 18px 24px;
+                font-size: 18px;
+            }
+
+            .btn {
+                padding: 14px 32px;
+                font-size: 16px;
+            }
+
+            .nav-contact-btn {
+                padding: 14px 32px;
+                font-size: 16px;
+            }
+
+            .nav-links {
+                gap: 48px;
+            }
+
+            .nav-links a {
+                font-size: 17px;
+            }
+
+            .logo {
+                font-size: 24px;
+            }
+
+            nav {
+                padding: 28px 0;
+            }
+
+            .hero-epfl-link {
+                padding: 11px 20px;
+                gap: 9px;
+            }
+
+            .hero-epfl-logo {
+                height: 1.25em;
+            }
+
+            .hero-epfl-text {
+                font-size: 1.05rem;
+            }
+
+            .hero-animation-container {
+                padding: 48px;
+            }
+
+            .battery-animation {
+                gap: 70px;
+                min-height: 380px;
+            }
+
+            /* Scale factor ~1.25x from base */
+            .heat-pump-container {
+                width: 250px;
+                height: 138px;
+                margin-bottom: 13px; /* Account for feet height */
+            }
+
+            .heat-pump {
+                height: 138px;
+            }
+
+            .heat-pump-body {
+                width: 250px;
+                height: 125px;
+                border-radius: 12px;
+            }
+
+            .heat-pump-feet {
+                bottom: -13px;
+                width: 48px;
+                height: 13px;
+            }
+
+            .heat-pump-feet.left {
+                left: 19px;
+            }
+
+            .heat-pump-feet.right {
+                right: 19px;
+            }
+
+            .heat-pump-fan-area {
+                left: 19px;
+                width: 100px;
+                height: 100px;
+            }
+
+            .heat-pump-fan {
+                width: 88px;
+                height: 88px;
+            }
+
+            .fan-blade {
+                width: 31px;
+                height: 10px;
+            }
+
+            .fan-blade:nth-child(1) {
+                transform: translate(-50%, -50%) rotate(0deg) translateX(25px);
+            }
+
+            .fan-blade:nth-child(2) {
+                transform: translate(-50%, -50%) rotate(90deg) translateX(25px);
+            }
+
+            .fan-blade:nth-child(3) {
+                transform: translate(-50%, -50%) rotate(180deg) translateX(25px);
+            }
+
+            .fan-blade:nth-child(4) {
+                transform: translate(-50%, -50%) rotate(270deg) translateX(25px);
+            }
+
+            .fan-hub {
+                width: 20px;
+                height: 20px;
+            }
+
+            .heat-pump-u-shape {
+                right: 25px;
+                top: 25px;
+                width: 88px;
+                height: 75px;
+            }
+
+            .battery-container {
+                width: 150px;
+                height: 188px;
+            }
+
+            .battery-body {
+                width: 100px;
+                height: 175px;
+                border-radius: 15px;
+            }
+
+            .battery-terminal {
+                width: 38px;
+                height: 15px;
+                top: -15px;
+            }
+
+            .epfl-logo {
+                height: 48px;
+            }
+
+            .fake-ui-content {
+                padding: 40px;
+            }
+
+            .fake-ui-container {
+                max-width: 1180px; /* 1100px image + 2*40px padding */
+            }
+
+            .fake-ui-content .product-image {
+                max-width: 1100px;
+            }
+
+            .product-image-container {
+                margin: 80px 0 100px 0;
+            }
+
+            footer {
+                padding: 60px 0;
+                margin-top: 60px;
+            }
+
+            .footer-content {
+                gap: 28px;
+            }
+
+            .footer-company-name {
+                font-size: 28px;
+            }
+
+            .footer-one-liner {
+                font-size: 1.1rem;
+            }
+
+            .footer-address {
+                font-size: 1.1rem;
+                margin-top: 16px;
+            }
+
+            .footer-content a {
+                font-size: 1.1rem;
+            }
+
+            .footer-copyright {
+                margin-top: 50px;
+                padding-top: 28px;
+            }
+
+            .footer-copyright p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (min-width: 2560px) {
+            .container {
+                max-width: 2000px;
+                padding: 0 200px;
+            }
+
+            .hero h1 {
+                font-size: 5rem;
+            }
+
+            .hero p {
+                font-size: 1.65rem;
+                max-width: 700px;
+            }
+
+            .hero-content {
+                gap: 120px;
+            }
+
+            section {
+                padding: 180px 0;
+            }
+
+            .section-title {
+                font-size: 3rem;
+                margin-bottom: 48px;
+            }
+
+            #technology .section-title,
+            #how-it-works .section-title,
+            #our-vision .section-title {
+                font-size: 48px;
+            }
+
+            .section-subtitle {
+                font-size: 1.45rem;
+                max-width: 1000px;
+                margin-bottom: 80px;
+            }
+
+            #technology .section-subtitle,
+            #how-it-works .section-subtitle,
+            #our-vision .section-subtitle {
+                font-size: 1.45rem;
+                max-width: 100%;
+                margin-bottom: 80px;
+            }
+
+            .technology-grid {
+                gap: 60px;
+                margin-top: 100px;
+            }
+
+            .tech-card {
+                padding: 56px;
+                border-radius: 20px;
+            }
+
+            .tech-card h3 {
+                font-size: 1.65rem;
+            }
+
+            .tech-card p {
+                font-size: 1.2rem;
+                line-height: 1.8;
+            }
+
+            .tech-card ul {
+                font-size: 1.4rem;
+                line-height: 1.8;
+            }
+
+            .tech-card ul li {
+                padding-left: 52px;
+                margin-bottom: 16px;
+            }
+
+            .tech-card ul li .check-icon {
+                width: 24px;
+                height: 24px;
+                font-size: 0.95rem;
+                border-width: 2.5px;
+            }
+
+            .tech-card-label {
+                font-size: 1.3rem;
+            }
+
+            .tech-icon {
+                font-size: 3.5rem;
+                margin-bottom: 28px;
+            }
+
+            #technology .section-label,
+            #how-it-works .section-label,
+            #our-vision .section-label {
+                font-size: 1.15rem;
+            }
+
+            .fake-ui-title {
+                font-size: 1.25rem;
+            }
+
+            .fake-ui-toggle-label {
+                font-size: 1.05rem;
+            }
+
+            .fake-ui-content-title {
+                font-size: 1rem;
+            }
+
+            .fake-ui-caption {
+                font-size: 1.3rem;
+            }
+
+            .fake-ui-stat-value {
+                font-size: 1.35rem;
+            }
+
+            .fake-ui-stat-label {
+                font-size: 0.9rem;
+            }
+
+            .fake-ui-stat-date-label {
+                font-size: 1rem;
+            }
+
+            .fake-ui-stat-date-value {
+                font-size: 1.15rem;
+            }
+
+            .fake-ui-topbar {
+                padding: 24px 32px;
+            }
+
+            .fake-ui-stats {
+                padding: 20px 32px;
+            }
+
+            .applications-grid {
+                gap: 36px;
+                margin: 40px 0;
+            }
+
+            .application-box {
+                padding: 40px 36px;
+                border-radius: 12px;
+            }
+
+            .application-icon {
+                font-size: 3rem;
+            }
+
+            .application-label {
+                font-size: 1.4rem;
+            }
+
+            .epfl-text {
+                font-size: 1.3rem;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+                gap: 48px;
+                margin-top: 100px;
+            }
+
+            .team-card {
+                padding: 56px;
+                border-radius: 24px;
+            }
+
+            .team-card h3 {
+                font-size: 1.7rem;
+            }
+
+            .team-card .role {
+                font-size: 1.15rem;
+            }
+
+            .team-card p {
+                font-size: 1.1rem;
+            }
+
+            .team-avatar {
+                width: 160px;
+                height: 160px;
+                font-size: 56px;
+                margin-bottom: 28px;
+            }
+
+            .stats-grid {
+                gap: 100px;
+            }
+
+            .stat-item {
+                padding: 40px;
+            }
+
+            .stat-number {
+                font-size: 4rem;
+            }
+
+            .stat-label {
+                font-size: 1.25rem;
+            }
+
+            .quote-box {
+                padding: 56px;
+                max-width: 1200px;
+                border-radius: 12px;
+            }
+
+            .quote-text {
+                font-size: 1.45rem;
+            }
+
+            .quote-attribution {
+                font-size: 1.3rem;
+            }
+
+            .complexity-point {
+                font-size: 1.4rem;
+            }
+
+            .thermal-complexity-points {
+                gap: 10px;
+            }
+
+            .why-thermal-content {
+                gap: 100px;
+                margin-top: 80px;
+            }
+
+            .globe-container {
+                width: 320px;
+                height: 320px;
+            }
+
+            .contact-content {
+                max-width: 900px;
+            }
+
+            .contact-form {
+                gap: 40px;
+                margin-top: 60px;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                padding: 22px 28px;
+                font-size: 20px;
+                border-radius: 12px;
+            }
+
+            .form-group label {
+                font-size: 16px;
+                margin-bottom: 12px;
+            }
+
+            .btn {
+                padding: 16px 40px;
+                font-size: 18px;
+                border-radius: 32px;
+            }
+
+            .nav-contact-btn {
+                padding: 14px 32px;
+                font-size: 16px;
+            }
+
+            .nav-links {
+                gap: 56px;
+            }
+
+            .nav-links a {
+                font-size: 18px;
+            }
+
+            .logo {
+                font-size: 28px;
+            }
+
+            nav {
+                padding: 36px 0;
+            }
+
+            .hero-animation-container {
+                padding: 60px;
+                border-radius: 16px;
+            }
+
+            .battery-animation {
+                gap: 90px;
+                min-height: 440px;
+            }
+
+            /* Scale factor ~1.5x from base */
+            .heat-pump-container {
+                width: 300px;
+                height: 165px;
+                margin-bottom: 15px; /* Account for feet height */
+            }
+
+            .heat-pump {
+                height: 165px;
+            }
+
+            .heat-pump-body {
+                width: 300px;
+                height: 150px;
+                border-radius: 15px;
+            }
+
+            .heat-pump-feet {
+                bottom: -15px;
+                width: 57px;
+                height: 15px;
+                border-radius: 0px 0px 5px 5px;
+            }
+
+            .heat-pump-feet.left {
+                left: 23px;
+            }
+
+            .heat-pump-feet.right {
+                right: 23px;
+            }
+
+            .heat-pump-fan-area {
+                left: 23px;
+                width: 120px;
+                height: 120px;
+            }
+
+            .heat-pump-fan {
+                width: 105px;
+                height: 105px;
+            }
+
+            .fan-blade {
+                width: 38px;
+                height: 12px;
+                border-radius: 0 12px 0 12px;
+            }
+
+            .fan-blade:nth-child(1) {
+                transform: translate(-50%, -50%) rotate(0deg) translateX(30px);
+            }
+
+            .fan-blade:nth-child(2) {
+                transform: translate(-50%, -50%) rotate(90deg) translateX(30px);
+            }
+
+            .fan-blade:nth-child(3) {
+                transform: translate(-50%, -50%) rotate(180deg) translateX(30px);
+            }
+
+            .fan-blade:nth-child(4) {
+                transform: translate(-50%, -50%) rotate(270deg) translateX(30px);
+            }
+
+            .fan-hub {
+                width: 24px;
+                height: 24px;
+            }
+
+            .heat-pump-u-shape {
+                right: 30px;
+                top: 30px;
+                width: 105px;
+                height: 90px;
+                border-width: 5px;
+            }
+
+            .battery-container {
+                width: 180px;
+                height: 225px;
+            }
+
+            .battery-body {
+                width: 120px;
+                height: 210px;
+                border-radius: 18px;
+                border-width: 5px;
+            }
+
+            .battery-terminal {
+                width: 45px;
+                height: 18px;
+                top: -18px;
+                border-radius: 6px 6px 0 0;
+            }
+
+            .theme-option {
+                padding: 14px 32px;
+                font-size: 16px;
+            }
+
+            .hero-epfl-link {
+                padding: 14px 24px;
+                gap: 12px;
+                border-radius: 28px;
+            }
+
+            .hero-epfl-logo {
+                height: 1.4em;
+            }
+
+            .hero-epfl-text {
+                font-size: 1.15rem;
+            }
+
+            .fake-ui-header {
+                padding: 20px 28px;
+            }
+
+            .fake-ui-content {
+                padding: 48px;
+            }
+
+            .product-image-container {
+                margin: 80px 0 100px 0;
+            }
+
+            footer {
+                padding: 80px 0;
+                margin-top: 80px;
+            }
+
+            .footer-content {
+                gap: 36px;
+            }
+
+            .footer-company-name {
+                font-size: 34px;
+            }
+
+            .footer-one-liner {
+                font-size: 1.25rem;
+            }
+
+            .footer-address {
+                font-size: 1.25rem;
+                margin-top: 20px;
+                line-height: 1.7;
+            }
+
+            .footer-content a {
+                font-size: 1.25rem;
+            }
+
+            .footer-copyright {
+                margin-top: 60px;
+                padding-top: 36px;
+            }
+
+            .footer-copyright p {
+                font-size: 1.1rem;
+            }
+        }
+
         /* Responsive Design */
         @media (max-width: 1024px) {
             .hero-content {
@@ -2467,7 +3748,6 @@
 
             .fake-ui-content {
                 padding: 20px 16px;
-                min-height: 300px;
             }
 
             .fake-ui-content-title {
@@ -2550,7 +3830,7 @@
                 <div class="hero-text">
                     <h1>Optimize your thermal energy storage assets</h1>
                     <p>ThermoShift optimizes the operation of thermal energy storage assets for participation in electricity markets,
-                        cutting energy costs and CO<sub>2</sub> emissions.</p>
+                        cutting energy costs and CO₂ emissions.</p>
                     <div class="cta-buttons">
                         <a href="https://calendly.com/th-defauw/new-meeting" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a demo →</a>
                         <a href="mailto:contact@thermoshift.io" class="nav-contact-btn">Contact us →</a>
@@ -2791,13 +4071,12 @@
             <p class="section-label">Process</p>
             <h2 class="section-title">How It Works</h2>
             <!-- <p class="section-subtitle">
-                Unlock TESS value across electricity markets in three steps.
             </p> -->
             <div class="technology-grid">
                 <div class="tech-card fade-in">
                     <div class="tech-card-cursor-effect"></div>
                     <p class="tech-card-label">Step 1</p>
-                    <h3>We analyze your TESS</h3>
+                    <h3>We analyze your system</h3>
                     <ul>
                         <li><i class="bi bi-check check-icon"></i>System evaluation and characteristics</li>
                         <li><i class="bi bi-check check-icon"></i>Initial savings estimate</li>
@@ -2815,7 +4094,7 @@
                 <div class="tech-card fade-in">
                     <div class="tech-card-cursor-effect"></div>
                     <p class="tech-card-label">Step 3</p>
-                    <h3>Cost and CO<sub>2</sub> savings!</h3>
+                    <h3>Cost and CO₂ savings!</h3>
                     <ul>
                         <li><i class="bi bi-check check-icon"></i>Continuous optimization</li>
                         <li><i class="bi bi-check check-icon"></i>Revenue sharing model</li>
@@ -2832,7 +4111,7 @@
             <div class="sites-info">
                 <div class="sites-info-glow sites-info-glow-1"></div>
                 <div class="sites-info-glow sites-info-glow-2"></div>
-                <div class="sites-number">6</div>
+                <div class="sites-number">5</div>
                 <p class="sites-label">installations currently managed by ThermoShift</p>
             </div>
             <p class="section-subtitle">Ready to cut costs and emissions? Let's talk.</p>
@@ -2851,7 +4130,7 @@
             <div class="footer-content">
                 <div class="footer-left">
                     <p class="footer-company-name">ThermoShift</p>
-                    <p class="footer-one-liner">Optimizing Thermal Energy Storage Systems (TESS)<br> on electricity markets for a more sustainable future.</p>
+                    <p class="footer-one-liner">Optimizing thermal energy storage systems<br> on electricity markets for a more sustainable future.</p>
                     <p class="footer-address">
                         <a href="mailto:contact@thermoshift.io" class="footer-content">contact@thermoshift.io</a>
                         Route Cantonale<br>
