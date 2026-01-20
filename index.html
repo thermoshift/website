@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ThermoShift - Optimizing Thermal Energy Storage Systems on Electricity Markets</title>
+    <title>ThermoShift - Get more value from your thermal energy storage</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Funnel+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -1200,6 +1200,7 @@
             position: relative;
             display: inline-block;
             max-width: 100%;
+            cursor: default;
         }
 
         .fake-ui-container::before {
@@ -1744,16 +1745,39 @@
         .team-card {
             padding: 32px;
             background: var(--bg-card);
-            border-radius: 16px;
+            border-radius: 8px;
             border: 1px solid var(--border);
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
         }
 
         .team-card:hover {
-            transform: translateY(-8px);
             border-color: var(--accent);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .team-card-cursor-effect {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(var(--accent-rgb), 0.15) 0%, rgba(var(--accent-rgb), 0.1) 30%, rgba(var(--accent-rgb), 0.06) 50%, rgba(var(--accent-rgb), 0.03) 70%, transparent 90%);
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+            filter: blur(30px);
+        }
+
+        .team-card:hover .team-card-cursor-effect {
+            opacity: 1;
+        }
+
+        .team-card > *:not(.team-card-cursor-effect) {
+            position: relative;
+            z-index: 1;
         }
 
         .team-avatar {
@@ -1789,6 +1813,94 @@
             font-size: 0.95rem;
             line-height: 1.6;
         }
+
+        .team-photo {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 16px;
+            display: block;
+            border: 2px solid var(--border);
+        }
+
+        .team-description {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        #team .section-label {
+            font-size: 0.9rem;
+            color: var(--accent);
+            text-align: left;
+            margin-bottom: 8px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        #team .section-title {
+            font-size: 32px;
+            text-align: left;
+            margin-bottom: 48px;
+        }
+
+        #team .team-grid {
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            margin-top: 0;
+        }
+
+        #team .team-card {
+            padding: 24px 16px;
+        }
+
+        #team .team-card h3 {
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        #team .team-card .team-role {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin: 0 0 8px 0;
+        }
+
+        .team-photo-container {
+            position: relative;
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 16px;
+        }
+
+        .team-photo-container .team-photo {
+            margin: 0;
+        }
+
+        .school-badge {
+            position: absolute;
+            bottom: 0;
+            right: -8px;
+            width: 36px;
+            height: 36px;
+            background: var(--bg-card);
+            border: 2px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4px;
+        }
+
+        .school-badge img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
 
         /* Contact Section */
         .contact-content {
@@ -1979,6 +2091,21 @@
         .highlight-text {
             color: var(--accent);
             font-weight: 600;
+        }
+
+        .mission-statement {
+            margin: 40px 0;
+            padding: 28px 32px;
+            background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.08) 0%, rgba(var(--accent-rgb), 0.03) 100%);
+            border-left: 4px solid var(--accent);
+            border-radius: 0 8px 8px 0;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        .mission-statement .highlight-text {
+            font-size: inherit;
         }
 
         /* Footer */
@@ -2182,8 +2309,13 @@
 
             #technology .section-title,
             #how-it-works .section-title,
-            #our-vision .section-title {
+            #our-vision .section-title,
+            #team .section-title {
                 font-size: 36px;
+            }
+
+            #team .section-label {
+                font-size: 1rem;
             }
 
             .section-subtitle {
@@ -2296,23 +2428,45 @@
                 font-size: 1.05rem;
             }
 
-            .team-grid {
-                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-                gap: 32px;
+            #team .team-grid {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 24px;
             }
 
-            .team-card {
-                padding: 40px;
+            #team .team-card {
+                padding: 32px 24px;
             }
 
-            .team-card h3 {
-                font-size: 1.4rem;
+            #team .team-card h3 {
+                font-size: 1.15rem;
             }
 
-            .team-avatar {
-                width: 120px;
-                height: 120px;
-                font-size: 42px;
+            .team-photo {
+                width: 130px;
+                height: 130px;
+            }
+
+            .team-photo-container {
+                width: 130px;
+                height: 130px;
+            }
+
+            .school-badge {
+                width: 42px;
+                height: 42px;
+            }
+
+            .team-description {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+
+            #team .team-card .team-role {
+                font-size: 0.95rem;
+            }
+
+            #team .team-card h3 {
+                font-size: 1.2rem;
             }
 
             .stats-grid {
@@ -3440,6 +3594,25 @@
             .cta-buttons {
                 justify-content: center;
             }
+
+            #team .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            #team .team-card {
+                padding: 24px 20px;
+            }
+
+            .team-photo,
+            .team-photo-container {
+                width: 100px;
+                height: 100px;
+            }
+
+            .school-badge {
+                width: 34px;
+                height: 34px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -3792,6 +3965,40 @@
                 border-bottom: 1px solid var(--border);
                 align-items: center;
             }
+
+            /* Team section mobile */
+            #team .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+
+            #team .team-card {
+                padding: 24px 16px;
+            }
+
+            .team-photo {
+                width: 100px;
+                height: 100px;
+            }
+
+            .team-photo-container {
+                width: 100px;
+                height: 100px;
+            }
+
+            .school-badge {
+                width: 36px;
+                height: 36px;
+            }
+
+            #team .team-card h3 {
+                font-size: 1rem;
+            }
+
+            .team-description {
+                font-size: 0.85rem;
+            }
+
         }
 
         /* Smooth scroll */
@@ -3815,7 +4022,7 @@
                 </div>
                 <div class="hero-epfl-badge">
                     <a href="https://www.epfl.ch/about/" target="_blank" rel="noopener noreferrer" class="hero-epfl-link">
-                        <img src="epfl.png" alt="EPFL" class="hero-epfl-logo">
+                        <img src="images/logos/epfl.png" alt="EPFL" class="hero-epfl-logo">
                         <span class="hero-epfl-text"> spin-off</span>
                     </a>
                 </div>
@@ -3828,9 +4035,8 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Optimize your thermal energy storage assets</h1>
-                    <p>ThermoShift optimizes the operation of thermal energy storage assets for participation in electricity markets,
-                        cutting energy costs and CO₂ emissions.</p>
+                    <h1>Get more value from your thermal energy storage</h1>
+                    <p>Cut energy costs and CO₂ emissions by participating in electricity markets.</p>
                     <div class="cta-buttons">
                         <a href="https://calendly.com/th-defauw/new-meeting" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a demo →</a>
                         <a href="mailto:contact@thermoshift.io" class="nav-contact-btn">Contact us →</a>
@@ -3889,22 +4095,36 @@
             <h2 class="section-title">Unlocking the potential of thermal storage</h2>
             <p class="section-subtitle">
                 Thermal batteries offer major cost and sustainability benefits over traditional batteries, but their operation is inherently more complex: 
-                they are charged by HVAC, governed by thermodynamics, and coupled to thermal processes that must be managed.<br><br>
+                they are charged by HVAC systems, governed by thermodynamics, and coupled to heating/cooling processes that must be managed.<br><br>
 
                 ThermoShift uses advanced forecasting and optimization algorithms to model and optimize the operation of thermal 
-                systems in real time, maximizing value across electricity markets, HVAC performance, and local self-consumption.
+                systems in real time, maximizing value across:
+                <div class="thermal-complexity-points">
+                    <div class="complexity-point">
+                        <span class="complexity-bullet">></span>
+                        <span class="complexity-text"><strong>Electricity markets</strong> – shifting electricity use to low-price periods and providing grid services</span>
+                    </div>
+                    <div class="complexity-point">
+                        <span class="complexity-bullet">></span>
+                        <span class="complexity-text"><strong>Equipment performance</strong> – maximizing HVAC system efficiency and durability</span>
+                    </div>
+                    <div class="complexity-point">
+                        <span class="complexity-bullet">></span>
+                        <span class="complexity-text"><strong>Local self-consumption</strong> – maximizing the use of your solar production</span>
+                    </div>
+                </div>
             </p>
             <div class="product-image-container">
                 <div class="fake-ui-container">
                     <div class="fake-ui-topbar">
                         <div class="fake-ui-left">
-                            <span class="fake-ui-title">Building 3A - Hot water storage</span>
+                            <span class="fake-ui-title">Example: Building Space heating</span>
                         </div>
                         <div class="fake-ui-toggle-container">
-                            <span class="fake-ui-toggle-label">Optimizing</span>
-                            <label class="fake-ui-toggle-switch">
-                                <input type="checkbox" checked disabled>
-                                <span class="fake-ui-toggle-slider"></span>
+                            <span class="fake-ui-toggle-label">Optimize</span>
+                            <label class="fake-ui-toggle-switch" style="pointer-events: auto; cursor: pointer;">
+                                <input type="checkbox" id="optimize-toggle" checked>
+                                <span class="fake-ui-toggle-slider" style="cursor: pointer;"></span>
                             </label>
                         </div>
                     </div>
@@ -3916,18 +4136,19 @@
                             <span class="fake-ui-stat-date-value">Jan 2025</span>
                         </div>
                         <div class="fake-ui-stats-group">
+                            <span class="fake-ui-stat-date-label">Savings</span>
                             <div class="fake-ui-stat">
-                                <span class="fake-ui-stat-value"><i class="bi bi-cash-stack"></i> -12,450 CHF</span>
+                                <span class="fake-ui-stat-value"><i class="bi bi-cash-stack"></i> <span id="savings-chf">12,450 CHF</span></span>
                             </div>
                             <div class="fake-ui-stat-separator"></div>
                             <div class="fake-ui-stat">
-                                <span class="fake-ui-stat-value"><i class="bi bi-tree"></i> -15.3 tons CO₂</span>
+                                <span class="fake-ui-stat-value"><i class="bi bi-tree"></i> <span id="savings-co2">15.3 tons CO₂</span></span>
                             </div>
                         </div>
                     </div>
                     <div class="fake-ui-content">
                         <h3 class="fake-ui-content-title">Since Yesterday</h3>
-                        <img id="product-image" src="operation_fielddata_feb12_2025.png" alt="ThermoShift operation visualization showing heat pump power and electricity prices" class="product-image">
+                        <img id="product-image" src="images/field_data/field_data_opti.png" alt="Field data plot" class="product-image">
                         <p class="fake-ui-caption">Real data from operating a heat pump and hot water storage system in a building</p>
                     </div>
                 </div>
@@ -3977,7 +4198,7 @@
     <section id="our-vision">
         <div class="container">
             <p class="section-label">Vision</p>
-            <h2 class="section-title">Thermal energy storage is the future</h2>
+            <h2 class="section-title">Accelerating the adoption of thermal storage</h2>
             <!-- <div class="quote-box">
                 <div class="quote-box-cursor-effect"></div>
                 <blockquote class="quote-text">
@@ -3986,7 +4207,7 @@
                 <p class="quote-attribution">— International Energy Agency (IEA)</p>
             </div> -->
             <p class="section-subtitle">
-                50% of global energy goes to heating and cooling.<br>
+                <span class="highlight-text">50% of global energy</span> goes to heating and cooling.<br>
                 In many of these applications, thermal storage is a better alternative to traditional batteries:
                 <div class="thermal-complexity-points">
                     <div class="complexity-point">
@@ -4003,10 +4224,12 @@
                     </div>
                 </div>
                 </p>
-                <p class="section-subtitle">
-                Thermal storage is complex to optimize for electricity markets. <span class="highlight-text">ThermoShift makes it simple.</span>
+                <div class="mission-statement">
+                    <span class="highlight-text">ThermoShift's mission</span> is to make thermal storage profitable 
+                    by making its operation simple and grid-responsive.
+                </div>
 
-                <p class="section-label" style="margin-top: 0px">Use cases</p>
+                <p class="section-label" style="margin-top: 0px">Applications</p>
                 <div class="applications-grid">
                     <div class="application-box">
                         <div class="application-box-cursor-effect"></div>
@@ -4058,7 +4281,7 @@
         <div class="container">
             <div class="epfl-content">
                 <a href="https://www.epfl.ch/about/" target="_blank" rel="noopener noreferrer">
-                    <img src="epfl.png" alt="EPFL" class="epfl-logo">
+                    <img src="images/logos/epfl.png" alt="EPFL" class="epfl-logo">
                 </a>
                 <p class="epfl-text">ThermoShift is an official EPFL spin-off</p>
             </div>
@@ -4087,14 +4310,14 @@
                     <p class="tech-card-label">Step 2</p>
                     <h3>We integrate and test</h3>
                     <ul>
-                        <li><i class="bi bi-check check-icon"></i>HVAC controls and sensors integration</li>
+                        <li><i class="bi bi-check check-icon"></i>Controls and sensors integration</li>
                         <li><i class="bi bi-check check-icon"></i>Testing phase</li>
                     </ul>
                 </div>
                 <div class="tech-card fade-in">
                     <div class="tech-card-cursor-effect"></div>
                     <p class="tech-card-label">Step 3</p>
-                    <h3>Cost and CO₂ savings!</h3>
+                    <h3>You start saving</h3>
                     <ul>
                         <li><i class="bi bi-check check-icon"></i>Continuous optimization</li>
                         <li><i class="bi bi-check check-icon"></i>Revenue sharing model</li>
@@ -4111,7 +4334,7 @@
             <div class="sites-info">
                 <div class="sites-info-glow sites-info-glow-1"></div>
                 <div class="sites-info-glow sites-info-glow-2"></div>
-                <div class="sites-number">5</div>
+                <div class="sites-number">6</div>
                 <p class="sites-label">installations currently managed by ThermoShift</p>
             </div>
             <p class="section-subtitle">Ready to cut costs and emissions? Let's talk.</p>
@@ -4130,7 +4353,7 @@
             <div class="footer-content">
                 <div class="footer-left">
                     <p class="footer-company-name">ThermoShift</p>
-                    <p class="footer-one-liner">Optimizing thermal energy storage systems<br> on electricity markets for a more sustainable future.</p>
+                    <p class="footer-one-liner">Maximizing the value of thermal energy storage<br>for a more sustainable future.</p>
                     <p class="footer-address">
                         <a href="mailto:contact@thermoshift.io" class="footer-content">contact@thermoshift.io</a>
                         Route Cantonale<br>
@@ -4434,11 +4657,31 @@
 
         function updateProductImage() {
             const productImage = document.getElementById('product-image');
+            const optimizeToggle = document.getElementById('optimize-toggle');
+            const savingsChf = document.getElementById('savings-chf');
+            const savingsCo2 = document.getElementById('savings-co2');
+            
+            const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
+            const isOptimizing = optimizeToggle ? optimizeToggle.checked : true;
+            
             if (productImage) {
-                const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
-                productImage.src = isDarkMode 
-                    ? 'operation_fielddata_feb12_2025_dark.png' 
-                    : 'operation_fielddata_feb12_2025.png';
+                if (isOptimizing) {
+                    productImage.src = isDarkMode 
+                        ? 'images/field_data/field_data_opti_dark.png' 
+                        : 'images/field_data/field_data_opti.png';
+                } else {
+                    productImage.src = isDarkMode 
+                        ? 'images/field_data/field_data_no_opti_dark.png' 
+                        : 'images/field_data/field_data_no_opti.png';
+                }
+            }
+            
+            // Update savings values based on optimize toggle
+            if (savingsChf) {
+                savingsChf.textContent = isOptimizing ? '12,450 CHF' : '0 CHF';
+            }
+            if (savingsCo2) {
+                savingsCo2.textContent = isOptimizing ? '15.3 tons CO₂' : '0 tons CO₂';
             }
         }
 
@@ -4506,6 +4749,12 @@
         
         // Update product image on page load
         updateProductImage();
+        
+        // Listen for optimize toggle changes
+        const optimizeToggle = document.getElementById('optimize-toggle');
+        if (optimizeToggle) {
+            optimizeToggle.addEventListener('change', updateProductImage);
+        }
 
         // Tech card cursor effect
         function initCursorEffect() {
@@ -4533,6 +4782,22 @@
                 
                 box.addEventListener('mousemove', (e) => {
                     const rect = box.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    cursorEffect.style.left = x + 'px';
+                    cursorEffect.style.top = y + 'px';
+                });
+            });
+
+            const teamCards = document.querySelectorAll('.team-card');
+            
+            teamCards.forEach(card => {
+                const cursorEffect = card.querySelector('.team-card-cursor-effect');
+                if (!cursorEffect) return;
+                
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
                     const x = e.clientX - rect.left;
                     const y = e.clientY - rect.top;
                     
