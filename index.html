@@ -883,7 +883,9 @@
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
             border: none;
         }
@@ -1821,7 +1823,7 @@
             object-fit: cover;
             margin: 0 auto 16px;
             display: block;
-            border: 2px solid var(--border);
+            border: 2px solid var(--accent);
         }
 
         .team-description {
@@ -1864,7 +1866,7 @@
 
         #team .team-card .team-role {
             font-size: 0.85rem;
-            color: var(--accent);
+            color: var(--text-secondary);
             font-weight: 500;
             margin: 0 0 8px 0;
         }
@@ -2372,7 +2374,8 @@
 
             #technology .section-label,
             #how-it-works .section-label,
-            #our-vision .section-label {
+            #our-vision .section-label,
+            #team .section-label {
                 font-size: 1rem;
             }
 
@@ -2462,11 +2465,15 @@
             }
 
             #team .team-card .team-role {
-                font-size: 0.95rem;
+                font-size: 1.05rem;
             }
 
             #team .team-card h3 {
-                font-size: 1.2rem;
+                font-size: 1.4rem;
+            }
+
+            #team .team-card p {
+                font-size: 1.05rem;
             }
 
             .stats-grid {
@@ -2490,6 +2497,10 @@
             }
 
             .complexity-point {
+                font-size: 1.2rem;
+            }
+
+            .mission-statement {
                 font-size: 1.2rem;
             }
 
@@ -2647,6 +2658,25 @@
                 top: -13px;
             }
 
+            /* Scale flux animations ~1.1x for 1600px screens */
+            .heat-pump-flux {
+                width: 132px;
+                height: 44px;
+                top: -44px;
+            }
+
+            .heat-pump-horizontal-flux {
+                width: 66px;
+                height: 88px;
+                right: -66px;
+            }
+
+            .battery-discharge-flux {
+                width: 132px;
+                height: 44px;
+                top: -44px;
+            }
+
             .fake-ui-content {
                 padding: 40px;
             }
@@ -2778,7 +2808,8 @@
 
             #technology .section-label,
             #how-it-works .section-label,
-            #our-vision .section-label {
+            #our-vision .section-label,
+            #team .section-label {
                 font-size: 1.05rem;
             }
 
@@ -2845,16 +2876,19 @@
                 padding: 48px;
             }
 
-            .team-card h3 {
-                font-size: 1.5rem;
+            .team-card h3,
+            #team .team-card h3 {
+                font-size: 1.2rem;
             }
 
-            .team-card .role {
-                font-size: 1.05rem;
+            .team-card .role,
+            #team .team-card .team-role {
+                font-size: 1.1rem;
             }
 
-            .team-card p {
-                font-size: 1rem;
+            .team-card p,
+            #team .team-card p {
+                font-size: 1.1rem;
             }
 
             .team-avatar {
@@ -2894,6 +2928,10 @@
             }
 
             .complexity-point {
+                font-size: 1.25rem;
+            }
+
+            .mission-statement {
                 font-size: 1.25rem;
             }
 
@@ -3061,6 +3099,25 @@
                 top: -15px;
             }
 
+            /* Scale flux animations ~1.25x for 1920px screens */
+            .heat-pump-flux {
+                width: 150px;
+                height: 50px;
+                top: -50px;
+            }
+
+            .heat-pump-horizontal-flux {
+                width: 75px;
+                height: 100px;
+                right: -75px;
+            }
+
+            .battery-discharge-flux {
+                width: 150px;
+                height: 50px;
+                top: -50px;
+            }
+
             .epfl-logo {
                 height: 48px;
             }
@@ -3212,7 +3269,8 @@
 
             #technology .section-label,
             #how-it-works .section-label,
-            #our-vision .section-label {
+            #our-vision .section-label,
+            #team .section-label {
                 font-size: 1.15rem;
             }
 
@@ -3289,16 +3347,19 @@
                 border-radius: 24px;
             }
 
-            .team-card h3 {
-                font-size: 1.7rem;
+            .team-card h3,
+            #team .team-card h3 {
+                font-size: 1.25rem;
             }
 
-            .team-card .role {
-                font-size: 1.15rem;
+            .team-card .role,
+            #team .team-card .team-role {
+                font-size: 1.2rem;
             }
 
-            .team-card p {
-                font-size: 1.1rem;
+            .team-card p,
+            #team .team-card p {
+                font-size: 1.2rem;
             }
 
             .team-avatar {
@@ -3339,6 +3400,10 @@
             }
 
             .complexity-point {
+                font-size: 1.4rem;
+            }
+
+            .mission-statement {
                 font-size: 1.4rem;
             }
 
@@ -3384,8 +3449,9 @@
             }
 
             .nav-contact-btn {
-                padding: 14px 32px;
-                font-size: 16px;
+                padding: 16px 40px;
+                font-size: 18px;
+                border-radius: 32px;
             }
 
             .nav-links {
@@ -3509,6 +3575,25 @@
                 height: 18px;
                 top: -18px;
                 border-radius: 6px 6px 0 0;
+            }
+
+            /* Scale flux animations ~1.5x for 2560px screens */
+            .heat-pump-flux {
+                width: 180px;
+                height: 60px;
+                top: -60px;
+            }
+
+            .heat-pump-horizontal-flux {
+                width: 90px;
+                height: 120px;
+                right: -90px;
+            }
+
+            .battery-discharge-flux {
+                width: 180px;
+                height: 60px;
+                top: -60px;
             }
 
             .theme-option {
@@ -4017,6 +4102,7 @@
                     <div class="nav-links">
                         <a href="#technology">Product</a>
                         <a href="#our-vision">Vision</a>
+                        <a href="#team">Team</a>
                         <a href="#how-it-works">Process</a>
                     </div>
                 </div>
@@ -4158,7 +4244,7 @@
                     <div class="tech-card-cursor-effect"></div>
                     <p class="tech-card-label">Cost-Effective</p>
                     <h3>Save 20-40% on your energy costs</h3>
-                    <p>Shift loads to low-price periods and provide grid services while maintaining thermal constraints.</p>
+                    <p>Shift electricity use to low-price periods, provide grid services, and boost the efficieny of your equipment while maintaining thermal constraints.</p>
                 </div>
                 <div class="tech-card fade-in">
                     <div class="tech-card-cursor-effect"></div>
@@ -4212,7 +4298,7 @@
                 <div class="thermal-complexity-points">
                     <div class="complexity-point">
                         <span class="complexity-bullet">></span>
-                        <span class="complexity-text"><strong>Lower cost</strong> with abundant materials</span>
+                        <span class="complexity-text"><strong>Lower cost</strong> with abundant materials and simpler designs</span>
                     </div>
                     <div class="complexity-point">
                         <span class="complexity-bullet">></span>
@@ -4288,6 +4374,62 @@
         </div>
     </section>
 
+    <!-- Team Section -->
+    <section id="team">
+        <div class="container">
+            <p class="section-label">Team & Advisors</p>
+            <h2 class="section-title">Who we are</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-card-cursor-effect"></div>
+                    <div class="team-photo-container">
+                        <img src="images/team/thomas.jpg" alt="Thomas" class="team-photo">
+                        <div class="school-badge"><img src="images/logos/epfl.png" alt="EPFL"></div>
+                    </div>
+                    <h3>Thomas Defauw</h3>
+                    <p class="team-role">Founder and CEO</p>
+                    <p class="team-description">Energy engineer, research at Berkeley, founding engineer at GridWorks.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-card-cursor-effect"></div>
+                    <div class="team-photo-container">
+                        <img src="images/team/sophie.jpg" alt="Sophie" class="team-photo">
+                        <div class="school-badge"><img src="images/logos/centrale.png" alt="CentraleSupélec"></div>
+                    </div>
+                    <h3>Sophie Drouet</h3>
+                    <p class="team-description">Distributed energy operation and optimization at AutoGrid and Streem Energy.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-card-cursor-effect"></div>
+                    <div class="team-photo-container">
+                        <img src="images/team/mario.jpg" alt="Mario" class="team-photo">
+                        <div class="school-badge"><img src="images/logos/epfl.png" alt="EPFL"></div>
+                    </div>
+                    <h3>Prof. Mario Paolone</h3>
+                    <p class="team-description">EPFL professor, director of the Distributed Electrical Systems Laboratory.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-card-cursor-effect"></div>
+                    <div class="team-photo-container">
+                        <img src="images/team/george.jpg" alt="George" class="team-photo">
+                        <div class="school-badge"><img src="images/logos/harvard.png" alt="Harvard"></div>
+                    </div>
+                    <h3>Prof. George Baker</h3>
+                    <p class="team-description">Harvard professor, co-founder of GridWorks and VCharge (residential thermal energy storage).</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-card-cursor-effect"></div>
+                    <div class="team-photo-container">
+                        <img src="images/team/jessica.jpg" alt="Jessica" class="team-photo">
+                        <div class="school-badge"><img src="images/logos/mit.png" alt="MIT"></div>
+                    </div>
+                    <h3>Dr. Jessica Millar</h3>
+                    <p class="team-description">MIT PhD, co-founder of GridWorks and VCharge (residential thermal energy storage).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- How It Works Section -->
     <section id="how-it-works">
         <div class="container">
@@ -4317,7 +4459,7 @@
                 <div class="tech-card fade-in">
                     <div class="tech-card-cursor-effect"></div>
                     <p class="tech-card-label">Step 3</p>
-                    <h3>You start saving</h3>
+                    <h3>Cost and CO₂ savings</h3>
                     <ul>
                         <li><i class="bi bi-check check-icon"></i>Continuous optimization</li>
                         <li><i class="bi bi-check check-icon"></i>Revenue sharing model</li>
